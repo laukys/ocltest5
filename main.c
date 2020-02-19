@@ -40,14 +40,14 @@ int main(void) {
     cl_uint ret_num_devices;
     cl_uint ret_num_platforms;
     cl_int ret = clGetPlatformIDs(1, &platform_id, &ret_num_platforms);
-    ret = clGetDeviceIDs( platform_id,  CL_DEVICE_TYPE_GPU, 1, 
-    		4318, &ret_num_devices);
+    ret = clGetDeviceIDs( platform_id, CL_DEVICE_TYPE_ALL, 1, 
+            &device_id, &ret_num_devices);
 
     // Create an OpenCL context
     cl_context context = clCreateContext( NULL, 1, &device_id, NULL, NULL, &ret);
 
     // Create a command queue
-    cl_command_queue command_queue = clCreateCommandQueueWithProperties(context, device_id, 0, &ret);
+    cl_command_queue command_queue = clCreateCommandQueue(context, device_id, 0, &ret);
 
     // Create memory buffers on the device for each vector 
     cl_mem a_mem_obj = clCreateBuffer(context, CL_MEM_READ_ONLY, 
