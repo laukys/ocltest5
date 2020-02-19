@@ -36,12 +36,12 @@ int main(void) {
 
     // Get platform and device information
     cl_platform_id platform_id = NULL;
-    cl_device_id device_id = 4318;   
+    cl_device_id device_id = NULL;   
     cl_uint ret_num_devices;
     cl_uint ret_num_platforms;
     cl_int ret = clGetPlatformIDs(1, &platform_id, &ret_num_platforms);
     ret = clGetDeviceIDs( platform_id,  CL_DEVICE_TYPE_GPU, 1, 
-            &device_id, &ret_num_devices);
+    		4318, &ret_num_devices);
 
     // Create an OpenCL context
     cl_context context = clCreateContext( NULL, 1, &device_id, NULL, NULL, &ret);
