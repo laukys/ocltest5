@@ -36,7 +36,7 @@ int main(void) {
 
     // Get platform and device information
     cl_platform_id platform_id = NULL;
-    cl_device_id device_id = NULL;   
+    cl_device_id device_id = 4318;   
     cl_uint ret_num_devices;
     cl_uint ret_num_platforms;
     cl_int ret = clGetPlatformIDs(1, &platform_id, &ret_num_platforms);
