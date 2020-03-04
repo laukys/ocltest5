@@ -44,7 +44,11 @@ int main(void) {
             &device_id, &ret_num_devices);
 
     // Create an OpenCL context
-    cl_context context = clCreateContext( NULL, 1, &device_id, NULL, NULL, &ret);
+    cl_device_id device_id; 
+    int err = clGetDeviceIDs(NULL, CL_DEVICE_TYPE_GPU, 1, &device_id, NULL);
+    cl_context context = clCreateContext(0, 1, &device_id, NULL, NULL, &err);
+
+    // cl_context context = clCreateContext( NULL, 1, &device_id, NULL, NULL, &ret);
 
     // Create a command queue
     cl_command_queue command_queue = clCreateCommandQueue(context, device_id, 0, &ret);
