@@ -52,7 +52,7 @@ int main(void) {
     // cl_context context = clCreateContext( NULL, 1, &device_id, NULL, NULL, &ret);
 
     // Create a command queue
-    cl_command_queue command_queue = clCreateCommandQueue(context, device_id, 0, &err);
+    cl_command_queue command_queue = clCreateCommandQueue(context, device_id, 0, &ret);
 
     // Create memory buffers on the device for each vector 
     cl_mem a_mem_obj = clCreateBuffer(context, CL_MEM_READ_ONLY, 
