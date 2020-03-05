@@ -49,7 +49,7 @@ int main(void) {
     
     // Create an OpenCL context
     
-    cl_context context = clCreateContext(0, 1, &device_id, NULL, NULL, &err);
+    cl_context context = clCreateContext(0, 1, &device_id, NULL, NULL, &ret);
     //cl_context context = clCreateContext( NULL, 1, &device_id, NULL, NULL, &ret);
 
     // Create a command queue
