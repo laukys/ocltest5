@@ -95,7 +95,7 @@ int main(void) {
 
     // Display the result to the screen
     for(i = 0; i < LIST_SIZE; i++)
-        printf("%d + %d = %d\n", A[i]);
+        printf("%.3f\n", A[i]);
 
     // Clean up
     ret = clFlush(command_queue);
